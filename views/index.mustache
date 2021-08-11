@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title id = "title">FOKUS TIMER</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">  
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/headerStyle.css" rel="stylesheet">
+  <link href="/css/index.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ad51114836.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+  <div class= "header">
+    <div class= "container_h">
+      <h1 class="h1_h">Focus Timer</h1>
+      <div class="buttons_h">
+        <button data-modal-target="#settings" type="button">
+          <i class="fas fa-cog"></i></button>
+        <button data-modal-target="#profile" type="button">
+          <i class="fas fa-user"></i></button>
+        <button data-modal-target="#stats" type="button">
+          <i class="fas fa-chart-line"></i>
+        </button>
+      </div>
+      <div class="hr"></div>
+    </div>
+  </div>
+
+  
+
+  <!-- Main -->
+  <div class="main">
+    <div class="div_1">
+      <div class="container_1">
+        <h2 id="focus_header">Work</h2>
+        <div class = clock>
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"> 
+            <circle class ="background" r="97" cx="100" cy="100" />
+            <circle class ="background" id = "background" r="97" cx="100" cy="100" />
+            <circle class ="progression" id="progression" r="50" cx="100" cy="100" />
+            <circle class ="overlay"  r="97" cx="100" cy="100" />
+            <circle class ="center" r="5" cx="100" cy="100" />
+          </svg>
+        </div>
+      </div>
+      <h2 class="countdown" id="countdown">0:00</h2>
+      <div class=container_2>
+        <div class=form_1->
+          
+        </div>
+        <div class="form_1" id="form_1">
+          <button class= "button_2" id="skip" type="button">
+            <i class="fas fa-step-forward"></i></button>
+          <div id="button_1_start"><button class= "button_1" id="start" type="button">
+            <i class="fas fa-play"></i></button></div>
+          <div id="button_1_pause"><button class= "button_1" id="pause" type="button">
+            <i class="fas fa-pause"></i></button></div>
+          <button class= "button_2" id="reset" type="button">
+            <i class="fas fa-redo-alt"></i></button>
+        </div> 
+        <div class= form_1->
+          <h2 id = "session_counter">0/10</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_background" id="modal_background"></div>
+
+  <!-- {{! Setting Popup }} -->
+  <div class="modal" id="settings">
+    <div class="settings_heading">
+      <h2>Timer Settings</h2>
+      <button data-close-button class="close_button"><i class="fas fa-times" id="close-btn"></i></button>
+      <hr class="hr">
+    </div>
+    <div class="settings-form">
+      <h3 class="modal_h3">Time (Minutes)</h3>
+      <div class = column>
+        <label class="settings-lable" for="work-time">Work</label>
+        <input  type="number" class="time_input" id="work-time" name="Work" value="50" placeholder="Minutes">
+      </div>
+      <div class = column>
+        <label class="settings-lable" for="pause-time1">Pause</label>
+        <input  type="number" class="time_input" id="pause-time1" name="Pause" value="10" placeholder="Minutes">
+      </div>
+      <div class = column>
+        <label class="settings-lable" for="pause-time1">Long-Pause</label>
+        <input  type="number" class="time_input" id="pause-time2" name="Long-Pause" value="30" placeholder="Minutes"><br>
+      </div>
+      <div class = column>
+        <label class ="settings-lable" for="work-time">Sessions</label>
+        <input  type="number" class="time_input" id="sessions" name="Sessions" value="10" placeholder="Sessions">
+      </div>
+      <div class = column>
+        <label class ="settings-lable" for="pause-time1">Long Pause on Session</label>
+        <input  type="text" class="time_input" id="pause-sessions" name="Long Pause on Session" value="4,8" placeholder="Example: 4,8"><br>
+      </div>
+      <div class = "checkbox_container">
+        <input  type="checkbox" class="time_checkbox" id="autoplay1" name="Autoplay Work Sessions">
+      </div>
+      <label class="settings-lable checkbox" for="autoplay1">Autoplay Work Sessions</label>
+      <div class = "checkbox_container">
+        <input  type="checkbox" class="time_checkbox" id="autoplay2" name="Autoplay Pause Sessions">
+      </div>
+      <label class="settings-lable checkbox" for="autoplay2">Autoplay Pause Sessions</label>
+    </div>
+    <div class= settings-form>
+      <h3 class="modal_h3">Sounds</h3>
+      <label class="settings-lable select">Ringtone</label>
+      <select class="time_input" id="ringtone" name="Work">
+        <option value="ringtone1">Old Phone</option>
+        <option value="ringtone2">Beep Beep</option>
+        <option value="ringtone3">Bell Notification</option>
+      </select>
+      <label class="settings-lable select">Volume</label>
+      <input class= "time_input" id="volume" type="range" min ='0' max='100' value="25">
+      <h3 id=volume_field>50</h3>
+    </div>
+  </div>
+  <div class= "modal" id="profile">
+    <div class="settings_heading">
+      <h2>Your Profile</h2>
+      <button data-close-button class="close_button"><i class="fas fa-times" id="close-btn"></i></button>
+      <hr class="hr">
+    </div>
+    <div class="container_c">
+      <i class="fas fa-tools"></i>
+      <h2>Coming Soon...</h2>
+    </div>
+  </div>
+
+  <div class= "modal" id="stats">
+    <div class="settings_heading">
+      <h2>Statistics</h2>
+      <button data-close-button class="close_button"><i class="fas fa-times" id="close-btn"></i></button>
+      <hr class="hr">
+    </div>
+    <div class="container_c">
+      <i class="fas fa-tools"></i>
+      <h2>Coming Soon...</h2>
+    </div>
+  </div>
+
+  <footer>
+  </footer>
+
+  <script type ="text/javascript" src="/js/home.js"></script> 
+  <script type ="text/javascript" src="/js/timer.js"></script> 
+</body>
+</html>

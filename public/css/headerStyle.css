@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.container_h {
+    width: 900px;
+    min-width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.h1_h {
+    width: 48%;
+    padding-left: 2%;
+    font-size: 30px;
+    text-align: left;
+}
+
+
+.buttons_h {
+    width: 48%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header .hr{
+    width: 100%;
+}
+
+
+/* Buttons */
+.header button{
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    margin: 0 5px;
+    box-shadow: 0 6px  #48CF42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+
+.header i {
+    font-size: 30px;
+}
+
+.header i:hover {
+    font-size: 33px;  
+}
+
+
+@media only screen and (max-width: 900px) {
+    .container_h{
+        min-width: 90%;
+    }
+}

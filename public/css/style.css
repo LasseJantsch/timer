@@ -1,0 +1,40 @@
+
+/*Whole Body */
+body {
+    margin: 0;
+    background-color: #6DC0D5;
+    color: #fff;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.hr{
+    border: none;
+    height: 5px;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 0.8;
+    margin: 0px;
+    padding: 0px;
+}
+
+button{
+    text-align: center;
+    background-color: #7CE577;
+    border: none;
+    color: #fff;  
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7CDF77;
+}
+
+button:active {
+    box-shadow: 0 0;
+    transform: translateY(3px);
+}
+
+
+
+
+
