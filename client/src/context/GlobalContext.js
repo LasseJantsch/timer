@@ -4,7 +4,7 @@ const GlobalContext = createContext()
 
 export const GlobalContextProvider = props => {
 
-    const [modal, setModal] = useState(true)
+    const [modal, setModal] = useState()
     const [timerData, setTimerData] = useState({
         work: "50",
         pause: "10",

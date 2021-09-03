@@ -205,6 +205,10 @@ circle.progression {
   height: 100px;
 }
 
+.UI i {
+  pointer-events: none;
+}
+
 .button_1{
   width: 80px;
   height: 80px;

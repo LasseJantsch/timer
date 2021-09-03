@@ -5,12 +5,19 @@ import { useTimerContext } from "../context/TimerContext"
 export default function Timer() {
 
     const {timerData} = useGlobalContext()
+    const {
+        sessionCount, 
+        sessionStatus, 
+        displayTime,
+        timerStatus,
+        handleButtons,
+    } = useTimerContext()
 
     return(
 
         <div class="timer">
             <div class="timerHeader">
-                <h2>{"Work"}</h2>
+                <h2>{sessionStatus?"Work":"Pause"}</h2>
             </div>
                 <div class ="clock">
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"> 
@@ -21,16 +28,16 @@ export default function Timer() {
                         <circle class ="center" r="5" cx="100" cy="100" />
                     </svg>
                 </div>
-            <h2 class="countdown" id="countdown">{"0:00"}</h2>
+            <h2 class="countdown" id="countdown">{displayTime}</h2>
             <div class="UI" >
-                <button class= "button_2" id="skip" type="button">
+                <button class= "button_2" id="skip" type="button" onClick={handleButtons}>
                     <i class="fas fa-step-forward"></i></button>
-                <button class= "button_1 act" id="start" type="button">
-                    <i class={false?"fas fa-pause":"fas fa-play"}></i></button>
-                <button class= "button_2" id="reset" type="button">
+                <button class= "button_1 act" id="start_pause" type="button" onClick={handleButtons}>
+                    <i class={timerStatus?"fas fa-pause":"fas fa-play"}></i></button>
+                <button class= "button_2" id="reset" type="button" onClick={handleButtons} >
                     <i class="fas fa-redo-alt"></i></button>
             </div> 
-            <h2  class="sessionCounter" id="sessionCounter">{"1"}/{"10"}</h2>
+            <h2  class="sessionCounter" id="sessionCounter">{sessionCount}/{timerData.sessions}</h2>
         </div>
     )
 }
