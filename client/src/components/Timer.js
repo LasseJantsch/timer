@@ -6,6 +6,7 @@ export default function Timer() {
 
     const {timerData} = useGlobalContext()
     const {
+        progressionEl,
         displayTime,
         displaySessions,
         timerStatus,
@@ -23,7 +24,7 @@ export default function Timer() {
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"> 
                         <circle class ="background" r="97" cx="100" cy="100" />
                         <circle class ="background" id = "background" r="97" cx="100" cy="100" />
-                        <circle class ="progression" id="progression" r="50" cx="100" cy="100" />
+                        <circle ref={progressionEl} class ="progression" id="progression" r="50" cx="100" cy="100" />
                         <circle class ="overlay"  r="97" cx="100" cy="100" />
                         <circle class ="center" r="5" cx="100" cy="100" />
                     </svg>
