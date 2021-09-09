@@ -6,10 +6,10 @@ export default function Timer() {
 
     const {timerData} = useGlobalContext()
     const {
-        sessionCount, 
-        sessionStatus, 
         displayTime,
+        displaySessions,
         timerStatus,
+        sessionStatus,
         handleButtons,
     } = useTimerContext()
 
@@ -32,12 +32,12 @@ export default function Timer() {
             <div class="UI" >
                 <button class= "button_2" id="skip" type="button" onClick={handleButtons}>
                     <i class="fas fa-step-forward"></i></button>
-                <button class= "button_1 act" id="start_pause" type="button" onClick={handleButtons}>
+                <button class= "button_1 act" id={timerStatus?"pause":"play"} type="button" onClick={handleButtons}>
                     <i class={timerStatus?"fas fa-pause":"fas fa-play"}></i></button>
                 <button class= "button_2" id="reset" type="button" onClick={handleButtons} >
                     <i class="fas fa-redo-alt"></i></button>
             </div> 
-            <h2  class="sessionCounter" id="sessionCounter">{sessionCount}/{timerData.sessions}</h2>
+            <h2  class="sessionCounter" id="sessionCounter">{displaySessions}/{timerData.sessions}</h2>
         </div>
     )
 }
